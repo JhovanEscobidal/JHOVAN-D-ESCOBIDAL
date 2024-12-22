@@ -2,11 +2,11 @@
 
 # Checkout V4
 
-This action checks-out your repository under `$GITHUB_WORKSPACE`, so your workflow can access it.
+This action checks-out your repository under $GITHUB_WORKSPACE , so your workflow can access it.
 
-Only a single commit is fetched by default, for the ref/SHA that triggered the workflow. Set `fetch-depth: 0` to fetch all history for all branches and tags. Refer [here](https://docs.github.com/actions/using-workflows/events-that-trigger-workflows) to learn which commit `$GITHUB_SHA` points to for different events.
+Only a single commit is fetched by default, for the ref/SHA that triggered the workflow. Set fetch-depth: 0` to fetch all history for all branches and tags. Refer [here](https://docs.github.com/actions/using-workflows/events-that-trigger-workflows) to learn which commit     $GITHUB_SHA points to for different events.
 
-The auth token is persisted in the local git config. This enables your scripts to run authenticated git commands. The token is removed during post-job cleanup. Set `persist-credentials: false` to opt-out.
+The auth token is persisted in the local git config. This enables your scripts to run authenticated git commands. The token is removed during post-job cleanup. Set persist-credentials: false to opt-out.
 
 When Git 2.18 or higher is not in your PATH, falls back to the REST API to download the files.
 
@@ -17,17 +17,17 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 # Usage
 
 <!-- start usage -->
-```yaml
+  yaml.|
 - uses: actions/checkout@v4
   with:
     # Repository name with owner. For example, actions/checkout
     # Default: ${{ github.repository }}
-    repository: ''
+    repository:
 
     # The branch, tag or SHA to checkout. When checking out the repository that
     # triggered a workflow, this defaults to the reference or SHA for that event.
     # Otherwise, uses the default branch.
-    ref: ''
+    ref: ''.
 
     # Personal access token (PAT) used to fetch the repository. The PAT is configured
     # with the local git config, which enables your scripts to run authenticated git
@@ -39,7 +39,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
     #
     # Default: ${{ github.token }}
-    token: ''
+    token: ''.
 
     # SSH key used to fetch the repository. The SSH key is configured with the local
     # git config, which enables your scripts to run authenticated git commands. The
@@ -57,30 +57,30 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     ssh-known-hosts: ''
 
     # Whether to perform strict host key checking. When true, adds the options
-    # `StrictHostKeyChecking=yes` and `CheckHostIP=no` to the SSH command line. Use
-    # the input `ssh-known-hosts` to configure additional hosts.
+    # `StrictHostKeyChecking=yes  and `CheckHostIP=no  to the SSH command line. Use
+    # the input  ssh-known-hosts to configure additional hosts.
     # Default: true
-    ssh-strict: ''
+    ssh-strict: ''.
 
     # The user to use when connecting to the remote SSH host. By default 'git' is
     # used.
     # Default: git
-    ssh-user: ''
+    ssh-user: ''.
 
     # Whether to configure the token or SSH key with the local git config
     # Default: true
-    persist-credentials: ''
+    persist-credentials: ''.
 
     # Relative path under $GITHUB_WORKSPACE to place the repository
-    path: ''
+    path: ''.
 
-    # Whether to execute `git clean -ffdx && git reset --hard HEAD` before fetching
+    # Whether to execute  git clean - ffdx & git reset  to hard HEAD before fetching
     # Default: true
-    clean: ''
+    clean: ''.
 
     # Partially clone against a given filter. Overrides sparse-checkout if set.
     # Default: null
-    filter: ''
+    filter: ''.
 
     # Do a sparse checkout on given patterns. Each pattern should be separated with
     # new lines.
@@ -107,7 +107,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     # Default: false
     lfs: ''
 
-    # Whether to checkout submodules: `true` to checkout submodules or `recursive` to
+    # Whether to checkout submodules:  true to checkout submodules or  recursive to
     # recursively checkout submodules.
     #
     # When the `ssh-key` input is not provided, SSH URLs beginning with
@@ -116,8 +116,8 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     # Default: false
     submodules: ''
 
-    # Add repository path as safe.directory for Git global config by running `git
-    # config --global --add safe.directory <path>`
+    # Add repository path as safe.directory for Git global config by running git
+    # config --global --add safe.directory <path> 
     # Default: true
     set-safe-directory: ''
 
@@ -126,13 +126,13 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     # running from unless specified. Example URLs are https://github.com or
     # https://my-ghes-server.example.com
     github-server-url: ''
-```
+
 <!-- end usage -->
 
 # Scenarios
 
 - [Fetch only the root files](#Fetch-only-the-root-files)
-- [Fetch only the root files and `.github` and `src` folder](#Fetch-only-the-root-files-and-github-and-src-folder)
+- [Fetch only the root files and .github and  src folder](#Fetch-only-the-root-files-and-github-and-src-folder)
 - [Fetch only a single file](#Fetch-only-a-single-file)
 - [Fetch all history for all tags and branches](#Fetch-all-history-for-all-tags-and-branches)
 - [Checkout a different branch](#Checkout-a-different-branch)
@@ -147,60 +147,57 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 
 ## Fetch only the root files
 
-```yaml
+  yaml
 - uses: actions/checkout@v4
   with:
-    sparse-checkout: .
-```
+    sparse-checkout: . 
 
-## Fetch only the root files and `.github` and `src` folder
+## Fetch only the root files and  .github and  src folder
 
-```yaml
+ yaml
 - uses: actions/checkout@v4
   with:
     sparse-checkout: |
       .github
       src
-```
+ Jhovan Escobidal
 
 ## Fetch only a single file
 
-```yaml
+  yaml
 - uses: actions/checkout@v4
   with:
     sparse-checkout: |
       README.md
     sparse-checkout-cone-mode: false
-```
 
 ## Fetch all history for all tags and branches
 
-```yaml
+  yaml
 - uses: actions/checkout@v4
   with:
     fetch-depth: 0
-```
+
 
 ## Checkout a different branch
 
-```yaml
+  yaml
 - uses: actions/checkout@v4
   with:
-    ref: my-branch
-```
+    ref: my-branch 
 
 ## Checkout HEAD^
 
-```yaml
+  yaml
 - uses: actions/checkout@v4
   with:
     fetch-depth: 2
 - run: git checkout HEAD^
-```
+
 
 ## Checkout multiple repos (side by side)
 
-```yaml
+ yaml
 - name: Checkout
   uses: actions/checkout@v4
   with:
@@ -211,13 +208,13 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
   with:
     repository: my-org/my-tools
     path: my-tools
-```
-> - If your secondary repository is private or internal you will need to add the option noted in [Checkout multiple repos (private)](#Checkout-multiple-repos-private)
+
+> - If your secondary repository is private or internal you will need to add the option noted in [Checkout multiple repos private ](#Checkout-multiple-repos-private)
 
 ## Checkout multiple repos (nested)
 
-```yaml
-- name: Checkout
+  yaml
+- name: Checkout.
   uses: actions/checkout@v4
 
 - name: Checkout tools repo
@@ -225,13 +222,13 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
   with:
     repository: my-org/my-tools
     path: my-tools
-```
+  
 > - If your secondary repository is private or internal you will need to add the option noted in [Checkout multiple repos (private)](#Checkout-multiple-repos-private)
 
 ## Checkout multiple repos (private)
-
-```yaml
-- name: Checkout
+ 
+  yaml
+- name: Checkout -->
   uses: actions/checkout@v4
   with:
     path: main
@@ -242,22 +239,21 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     repository: my-org/my-private-tools
     token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
     path: my-tools
-```
 
-> - `${{ github.token }}` is scoped to the current repository, so if you want to checkout a different repository that is private you will need to provide your own [PAT](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
+
+> -   (github.token)is scoped to the current repository, so if you want to checkout a different repository that is private you will need to provide your own [PAT](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
 
 
 ## Checkout pull request HEAD commit instead of merge commit
 
-```yaml
+  yaml
 - uses: actions/checkout@v4
   with:
-    ref: ${{ github.event.pull_request.head.sha }}
-```
-
+    ref: $ -[JHOVAN D ESCOBIDAL…] github.event.pull request.head.sha1 
+JDE1
 ## Checkout pull request on closed event
 
-```yaml
+yaml
 on:
   pull_request:
     branches: [main]
@@ -267,11 +263,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-```
+
 
 ## Push a commit using the built-in token
 
-```yaml
+   yaml
 on: push
 jobs:
   build:
@@ -286,14 +282,14 @@ jobs:
           git add .
           git commit -m "generated"
           git push
-```
-*NOTE:* The user email is `{user.id}+{user.login}@users.noreply.github.com`. See users API: https://api.github.com/users/github-actions%5Bbot%5D
+
+*NOTE:* The user email is    user.id login @ users.noreply.github.com. See users API: https://api.github.com/users/github
 
 ## Push a commit to a PR using the built-in token
 
-In a pull request trigger, `ref` is required as GitHub Actions checks out in detached HEAD mode, meaning it doesn’t check out your branch by default.
+In a pull request trigger,    ref  is required as GitHub Actions checks out in detached HEAD mode, meaning it doesn’t check out your branch by default.
 
-```yaml
+yaml
 on: pull_request
 jobs:
   build:
@@ -310,8 +306,9 @@ jobs:
           git add .
           git commit -m "generated"
           git push
-```
-*NOTE:* The user email is `{user.id}+{user.login}@users.noreply.github.com`. See users API: https://api.github.com/users/github-actions%5Bbot%5D
+
+*NOTE:* The user email is  user.id user.login 
+ @users.noreply.github.com See users API: https://api.github.com/users/github
 
 
 # License
