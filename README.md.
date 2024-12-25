@@ -1,10 +1,10 @@
-[![Build and Test](https://github.com/actions/checkout/actions/workflows/test.yml/badge.svg)](https://github.com/actions/checkout/actions/workflows/test.yml)
-
+(Build and Test);(https://github.com/actions/checkout/actions/workflows/test.yml/badge.svg)(https://github.com/actions/checkout/actions/workflows/test.yml)
+ Learn.microsoft.com/en-us/user
 # Checkout V4
-
+: /JDE1
 This action checks-out your repository under `$GITHUB_WORKSPACE`, so your workflow can access it.
-
-Only a single commit is fetched by default, for the ref/SHA that triggered the workflow. Set `fetch-depth: 0` to fetch all history for all branches and tags. Refer [here](https://docs.github.com/actions/using-workflows/events-that-trigger-workflows) to learn which commit `$GITHUB_SHA` points to for different events.
+name : —
+Only a single commit is fetched by default, for the ref/SHA that triggered the workflow. Set  fetch-depth: — 0 to fetch all history for all branches and tags. Refer : —[…](https://docs.github.com/actions/using/workflows/events-that-trigger-workflows) to learn which commit   $GITHUB_SHA/256  points to for different events.
 
 The auth token is persisted in the local git config. This enables your scripts to run authenticated git commands. The token is removed during post-job cleanup. Set `persist-credentials: false` to opt-out.
 
@@ -17,7 +17,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 # Usage
 
 <!-- start usage -->
-```yaml
+```yaml.
 - uses: actions/checkout@v4
   with:
     # Repository name with owner. For example, actions/checkout
@@ -48,7 +48,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     # We recommend using a service account with the least permissions necessary.
     #
     # [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
-    ssh-key: ''
+    ssh-key: SSH code
 
     # Known hosts in addition to the user and global host key database. The public SSH
     # keys for a host may be obtained using the utility `ssh-keyscan`. For example,
@@ -150,7 +150,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 ```yaml
 - uses: actions/checkout@v4
   with:
-    sparse-checkout: .
+    sparse-checkout: —
 ```
 
 ## Fetch only the root files and `.github` and `src` folder
@@ -169,7 +169,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 - uses: actions/checkout@v4
   with:
     sparse-checkout: |
-      README.md
+      README.md.
     sparse-checkout-cone-mode: false
 ```
 
@@ -291,7 +291,7 @@ jobs:
 
 ## Push a commit to a PR using the built-in token
 
-In a pull request trigger, `ref` is required as GitHub Actions checks out in detached HEAD mode, meaning it doesn’t check out your branch by default.
+In a pull request triggered reference is required as GitHub Actions checks out in detached HEAD mode, meaning it doesn’t check out your branch by default.
 
 ```yaml
 on: pull_request
@@ -311,9 +311,9 @@ jobs:
           git commit -m "generated"
           git push
 ```
-*NOTE:* The user email is `{user.id}+{user.login}@users.noreply.github.com`. See users API: https://api.github.com/users/github-actions%5Bbot%5D
+NOTE: The user email is user.id = (user.login) @users.noreply.github.com`. See users API: https://api.github.com/users/github/actions/?5Bbot%5D
 
 
-# License
+###License
 
-The scripts and documentation in this project are released under the [MIT License](LICENSE)
+The scripts and documentation in this project are released under the MIT Licensor or LICENSE.
