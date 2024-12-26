@@ -16,8 +16,8 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 
 # Usage
 
-<!-- start usage -->
-```yaml
+< -- start usage -->
+yaml
 - uses: actions/checkout@v4
   with:
     # Repository name with owner. For example, actions/checkout
@@ -27,7 +27,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     # The branch, tag or SHA to checkout. When checking out the repository that
     # triggered a workflow, this defaults to the reference or SHA for that event.
     # Otherwise, uses the default branch.
-    ref: ''
+    reference number :
 
     # Personal access token (PAT) used to fetch the repository. The PAT is configured
     # with the local git config, which enables your scripts to run authenticated git
@@ -126,17 +126,16 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     # running from unless specified. Example URLs are https://github.com or
     # https://my-ghes-server.example.com
     github-server-url: ''
-```
-<!-- end usage -->
+< -- end usage -->
 
 # Scenarios
 
 - [Fetch only the root files](#Fetch-only-the-root-files)
-- [Fetch only the root files and `.github` and `src` folder](#Fetch-only-the-root-files-and-github-and-src-folder)
+- [Fetch only the root files and .github and src  folder](#Fetch-only-the-root-files-and-github-and-src-folder)
 - [Fetch only a single file](#Fetch-only-a-single-file)
 - [Fetch all history for all tags and branches](#Fetch-all-history-for-all-tags-and-branches)
 - [Checkout a different branch](#Checkout-a-different-branch)
-- [Checkout HEAD^](#Checkout-HEAD)
+- [Checkout HEAD ](#Checkout-HEAD)
 - [Checkout multiple repos (side by side)](#Checkout-multiple-repos-side-by-side)
 - [Checkout multiple repos (nested)](#Checkout-multiple-repos-nested)
 - [Checkout multiple repos (private)](#Checkout-multiple-repos-private)
@@ -147,11 +146,11 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 
 ## Fetch only the root files
 
-```yaml
+yaml
 - uses: actions/checkout@v4
   with:
-    sparse-checkout: .
-```
+    sparse-checkout::
+
 
 ## Fetch only the root files and `.github` and `src` folder
 
@@ -161,25 +160,24 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
     sparse-checkout: |
       .github
       src
-```
 
 ## Fetch only a single file
 
-```yaml
+yaml
 - uses: actions/checkout@v4
   with:
     sparse-checkout: |
       README.md
     sparse-checkout-cone-mode: false
-```
+
 
 ## Fetch all history for all tags and branches
 
-```yaml
+yaml
 - uses: actions/checkout@v4
   with:
-    fetch-depth: 0
-```
+    fetch-depth: 1
+
 
 ## Checkout a different branch
 
@@ -187,16 +185,15 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 - uses: actions/checkout@v4
   with:
     ref: my-branch
-```
+
 
 ## Checkout HEAD^
 
-```yaml
+yaml
 - uses: actions/checkout@v4
   with:
     fetch-depth: 2
 - run: git checkout HEAD^
-```
 
 ## Checkout multiple repos (side by side)
 
@@ -216,7 +213,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
 
 ## Checkout multiple repos (nested)
 
-```yaml
+yaml
 - name: Checkout
   uses: actions/checkout@v4
 
@@ -225,7 +222,7 @@ Please refer to the [release page](https://github.com/actions/checkout/releases/
   with:
     repository: my-org/my-tools
     path: my-tools
-```
+  … 
 > - If your secondary repository is private or internal you will need to add the option noted in [Checkout multiple repos (private)](#Checkout-multiple-repos-private)
 
 ## Checkout multiple repos (private)
@@ -317,3 +314,4 @@ jobs:
 # License
 
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
+…
