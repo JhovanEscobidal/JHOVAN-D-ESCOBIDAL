@@ -267,7 +267,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-```
+
 
 ## Push a commit using the built-in token
 
@@ -281,13 +281,13 @@ jobs:
       - run: |
           date > generated.txt
           # Note: the following account information will not work on GHES
-          git config user.name "github-actions[bot]"
+          git config user.name "github-check-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "generated"
           git push
 ```
-*NOTE:* The user email is `{user.id}+{user.login}@users.noreply.github.com`. See users API: https://api.github.com/users/github-actions%5Bbot%5D
+*NOTE:* The user email is `{user.id}+{user.login}@users.noreply.github.com`. See users API: https://api.github.com/users/github-check-actions
 
 ## Push a commit to a PR using the built-in token
 
@@ -311,7 +311,8 @@ jobs:
           git commit -m "generated"
           git push
 ```
-*NOTE:* The user email is `{user.id}+{user.login}@users.noreply.github.com`. See users API: https://api.github.com/users/github-actions%5Bbot%5D
+*NOTE:* The user email is `{user.id}+{user.login}@users.noreply.github.com`. See users API: https://api.github.com/users/github/check-actions
+
 
 
 # License
